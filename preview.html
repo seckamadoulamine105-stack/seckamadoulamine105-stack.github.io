@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script>(function(){function ser(a){try{return Array.prototype.slice.call(a).map(function(x){if(typeof x==="object"&&x!==null){try{return JSON.stringify(x,null,2);}catch(e){return String(x);}}return String(x);}).join(" ");}catch(e){return "";}}function send(t,m){try{window.parent.postMessage({__htmlPreviewerConsole:true,type:t,message:m,timestamp:new Date().toLocaleTimeString()},"*");}catch(e){}}var c=window.console||{};["log","info","warn","error"].forEach(function(k){var orig=c[k];c[k]=function(){send(k==="log"?"log":k,ser(arguments));if(orig){try{orig.apply(c,arguments);}catch(e){}}};});window.console=c;window.onerror=function(message,source,lineno,colno,error){send("error","Error at line "+lineno+": "+message);return false;};window.onunhandledrejection=function(event){send("error","Unhandled Promise Rejection: "+(event&&event.reason));};})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formation HTML & CSS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+.header {
+    height: 70px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #6366f1;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 30px;
+}
+
+.hero {
+    min-height: 420px;
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #3730a3
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 10%;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #a5b4fc;
+}
+
+.hero p {
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.badge {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: white;
+    color: #3730a3;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 70px auto;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title p {
+    color: #6366f1;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.course {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.chapters {
+    background: #111827;
+}
+
+.chapter {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #273244;
+    color: white;
+    display: flex;
+    text-align: left;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.chapter:hover,
+.chapter.active {
+    background: #3730a3;
+}
+
+.chapter strong {
+    font-size: 20px;
+}
+
+.chapter b {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.chapter small {
+    opacity: .7;
+}
+
+.player {
+    padding: 25px;
+}
+
+.player video {
+    width: 100%;
+    max-height: 500px;
+    background: #000;
+    border-radius: 10px;
+}
+
+.video-info {
+    padding: 20px 0;
+}
+
+.video-info p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.video-info h3 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.license {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.license p {
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 40px;
+    background: #111827;
+    color: white;
+    text-align: center;
+}
+
+@media(max-width: 800px) {
+
+    .course {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+}</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Code<span>Academy</span></div>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#html">HTML</a>
+        <a href="#css">CSS</a>
+    </nav>
+</header>
+
+
+<section id="accueil" class="hero">
+
+    <div>
+        <p class="badge">FORMATION GRATUITE</p>
+
+        <h1>
+            Apprends le<br>
+            <span>HTML & CSS</span>
+        </h1>
+
+        <p>
+            Apprends à créer des sites web grâce à des
+            vidéos, des chapitres et des exercices.
+        </p>
+
+        <a href="#html" class="btn">
+            Commencer la formation
+        </a>
+    </div>
+
+</section>
+
+
+<main class="container">
+
+    <!-- HTML -->
+
+    <section id="html">
+
+        <div class="section-title">
+            <p>CHAPITRE 1</p>
+            <h2>Formation HTML5</h2>
+            <span>4 vidéos</span>
+        </div>
+
+
+        <div class="course">
+
+            <aside class="chapters">
+
+                <button onclick="playVideo(0)" class="chapter active">
+                    <strong>01</strong>
+                    <div>
+                        <b>Introduction à HTML</b>
+                        <small>15 minutes</small>
+                    </div>
+                </button>
+
+                <button onclick="playVideo(1)" class="chapter">
+                    <strong>02</strong>
+                    <div>
+                        <b>HTML expliqué</b>
+                        <small>8 minutes</small>
+                    </div>
+                </button>
+
+                <button onclick="playVideo(2)" class="chapter">
+                    <strong>03</strong>
+                    <div>
+                        <b>Layout HTML</b>
+                        <small>6 minutes</small>
+                    </div>
+                </button>
+
+                <button onclick="playVideo(3)" class="chapter">
+                    <strong>04</strong>
+                    <div>
+                        <b>Média dans HTML</b>
+                        <small>Vidéo</small>
+                    </div>
+                </button>
+
+            </aside>
+
+
+            <div class="player">
+
+                <video
+                    id="videoPlayer"
+                    controls
+                    preload="metadata">
+
+                    <source
+                        id="videoSource"
+                        src="videos/html/basic-introduction-html.webm"
+                        type="video/webm">
+
+                    Ton navigateur ne supporte pas la vidéo.
+                </video>
+
+                <div class="video-info">
+
+                    <p id="videoChapter">
+                        Chapitre 1
+                    </p>
+
+                    <h3 id="videoTitle">
+                        Introduction à HTML
+                    </h3>
+
+                    <p id="videoDescription">
+                        Découvre les bases du langage HTML
+                        et la structure d'une page web.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CSS -->
+
+    <section id="css">
+
+        <div class="section-title">
+            <p>CHAPITRE 2</p>
+            <h2>Formation CSS3</h2>
+            <span>4 vidéos</span>
+        </div>
+
+
+        <div class="course">
+
+            <aside class="chapters">
+
+                <button onclick="playCSSVideo(0)" class="chapter">
+                    <strong>01</strong>
+
+                    <div>
+                        <b>Introduction CSS</b>
+                        <small>Vidéo</small>
+                    </div>
+                </button>
+
+
+                <button onclick="playCSSVideo(1)" class="chapter">
+
+                    <strong>02</strong>
+
+                    <div>
+                        <b>CSS Standardization</b>
+                        <small>21 minutes</small>
+                    </div>
+
+                </button>
+
+
+                <button onclick="playCSSVideo(2)" class="chapter">
+
+                    <strong>03</strong>
+
+                    <div>
+                        <b>Animations CSS</b>
+                        <small>10 minutes</small>
+                    </div>
+
+                </button>
+
+
+                <button onclick="playCSSVideo(3)" class="chapter">
+
+                    <strong>04</strong>
+
+                    <div>
+                        <b>The Chroma Zone</b>
+                        <small>CSS</small>
+                    </div>
+
+                </button>
+
+            </aside>
+
+
+            <div class="player">
+
+                <video
+                    id="cssVideoPlayer"
+                    controls
+                    preload="metadata">
+
+                    <source
+                        id="cssVideoSource"
+                        src="videos/css/introduction-css.webm"
+                        type="video/webm">
+
+                    Ton navigateur ne supporte pas la vidéo.
+
+                </video>
+
+
+                <div class="video-info">
+
+                    <p>CSS3</p>
+
+                    <h3 id="cssVideoTitle">
+                        Introduction CSS
+                    </h3>
+
+                    <p>
+                        Découvre les bases des feuilles
+                        de style CSS.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Attribution -->
+
+    <section class="license">
+
+        <h2>Crédits et licences</h2>
+
+        <p>
+            Certaines vidéos utilisées dans cette formation
+            proviennent de Wikimedia Commons et sont utilisées
+            conformément aux licences indiquées sur leurs pages.
+        </p>
+
+        <p>
+            Les crédits et liens vers les sources originales
+            doivent être conservés.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 CodeAcademy — Formation HTML & CSS
+    </p>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+<script>const htmlVideos = [
+
+    {
+        title: "Introduction à HTML",
+        chapter: "Chapitre 1",
+        description:
+            "Découvre les bases du langage HTML.",
+        src:
+            "videos/html/basic-introduction-html.webm"
+    },
+
+    {
+        title: "HTML expliqué",
+        chapter: "Chapitre 2",
+        description:
+            "Comprends les balises, attributs et la structure HTML.",
+        src:
+            "videos/html/html-explained.webm"
+    },
+
+    {
+        title: "Layout HTML",
+        chapter: "Chapitre 3",
+        description:
+            "Apprends à organiser les éléments HTML.",
+        src:
+            "videos/html/layout-html.webm"
+    },
+
+    {
+        title: "Ajouter des médias en HTML",
+        chapter: "Chapitre 4",
+        description:
+            "Découvre comment intégrer des médias dans une page HTML.",
+        src:
+            "videos/html/adding-media-html.webm"
+    }
+
+];
+
+
+function playVideo(index) {
+
+    const video = htmlVideos[index];
+
+    const player =
+        document.getElementById("videoPlayer");
+
+    document.getElementById("videoSource").src =
+        video.src;
+
+    document.getElementById("videoChapter").textContent =
+        video.chapter;
+
+    document.getElementById("videoTitle").textContent =
+        video.title;
+
+    document.getElementById("videoDescription").textContent =
+        video.description;
+
+    player.load();
+
+    player.play();
+
+}
+
+
+const cssVideos = [
+
+    {
+        title: "Introduction à CSS",
+        src:
+            "videos/css/introduction-css.webm"
+    },
+
+    {
+        title: "CSS Standardization",
+        src:
+            "videos/css/css-standardization.webm"
+    },
+
+    {
+        title: "7 animations CSS",
+        src:
+            "videos/css/css-animations.webm"
+    },
+
+    {
+        title: "The Chroma Zone",
+        src:
+            "videos/css/chroma-zone.webm"
+    }
+
+];
+
+
+function playCSSVideo(index) {
+
+    const video = cssVideos[index];
+
+    const player =
+        document.getElementById("cssVideoPlayer");
+
+    document.getElementById("cssVideoSource").src =
+        video.src;
+
+    document.getElementById("cssVideoTitle").textContent =
+        video.title;
+
+    player.load();
+
+    player.play();
+
+}</script>
+</body>
+</html>
